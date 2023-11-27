@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600&display=swap");
+
+:root {
+  --gap: 17px;
+  --paynes-gray: #6bacd4;
+  --cadet-gray: #81b5c7;
+  --mint-green: #d0f4ea;
+  --tea-green: #e8fcc2;
+  --pistachio: #7d914e;
+  --light-color: #ffffff;
+  --dark-color: #222;
+}
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Gabarito", sans-serif;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, deepskyblue, royalblue);
+}
+
+.calculator {
+  background-color: var(--paynes-gray);
+  max-width: 420px;
+  width: 90%;
+  padding: var(--gap);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap);
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(206, 177, 177, 0.25);
+}
+
+.calculator output {
+  grid-column: span 4;
+  background-color: var(--cadet-gray);
+  color: var(--light-color);
+  font-size: 2.5rem;
+  text-align: end;
+  padding: 10px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.calculator button {
+  background-color: var(--mint-green);
+  color: var(--dark-color);
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  padding: 10px;
+  font-size: 1.5rem;
+  transition: 0.2s;
+  border-radius: 5px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+}
+
+.calculator button[data-equals] {
+  background-color: var(--pistachio);
+  grid-row: span 4;
+}
+
+.calculator button[data-operator] {
+  background-color: var(--tea-green);
+}
+
+.calculator button:active {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+
+.calculator button:disabled {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  cursor: not-allowed;
+}
+
+.calculator button:disabled:active {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+.calculator button:disabled:hover {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+.calculator button:disabled:active:hover {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+.calculator button:hover {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+
+
+/*footer with animation */
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  color: var(--light-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  animation: footer 1s ease-in-out infinite alternate;
+}
+
+
+
